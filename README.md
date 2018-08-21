@@ -15,23 +15,23 @@ calls the main function with proper parameters.
 
 It is designed to be used to call the main function of the program, say:
 ```
- def main(arg1, arg2, opt1=3, option2=False):
+def main(arg1, arg2, opt1=3, option2=False):
 	 print arg1, arg2, opt1, option2
 ```
 by first defining the command line:
 ```
- cldef = """
- arg1 : first argument
- arg2 : second argument
+cldef = """
+arg1 : first argument
+arg2 : second argument
 
- -o --option1 opt1 (int) : option number one
- -p --option2            : option number two
- """
+-o --option1 opt1 (int) : option number one
+-p --option2            : option number two
+"""
 ```
 and then calling main function (or any provided function) via che:
 ```
- import coche
- coche.che(main, cldef)
+import coche
+coche.che(main, cldef)
 ```
 
 Coche checks that there are correct number of positional arguments
@@ -68,7 +68,7 @@ print('\n'.join(cmds))
 ```
 that produces output
 ```
-parser = argparse.ArgumentParser(description="Here are the add_arg'commands")
+parser = argparse.ArgumentParser(description="Here are the add_arg-commands")
 parser.add_argument('arg1')
 parser.add_argument('arg2')
 parser.add_argument('arg3', help='the third argument')
@@ -84,8 +84,7 @@ args = parser.parse_args()
 The usual usage of coche is to call coche.che with a main function and argument definition:
 
 ```
- def main(a1, a2, a3, '
-          opt1=0, option2=False, mode="Ugly", verbose=False, pi_value=3.14):
+def main(a1, a2, a3, opt1=0, option2=False, mode="Ugly", verbose=False, pi_value=3.14):
 	print a1,a2,a3
 	print opt1, option2, mode, verbose, pi_value
 
