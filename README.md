@@ -83,7 +83,8 @@ args = parser.parse_args()
 
 ## Usage
 
-The usual usage of coche is to call `coche.che` with a main function and argument definition:
+The usual usage of coche is to call `coche.che` with a main function and argument definition.
+Here an example file *foo.py*:
 
 ```
 def main(a1, a2, a3, opt1=0, option2=False, mode="", verbose=False, pi_value=3):
@@ -101,7 +102,7 @@ coche.che(main,"""arg1; arg2
                 --pi-value (float) [3.14]: default: 3.14.
                 """)
 ```
-Running the code has desired effect:
+Running the code above has desired effect:
 ```
 $ python foo.py
 usage: foo.py [-h] [-o OPT1] [-p] [-m {Good,Bad,Ugly}] [-v] [-q]
