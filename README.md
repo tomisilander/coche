@@ -39,7 +39,7 @@ and that the options provided are legal. It also casts the
 arguments and builds the usage string.
 
 
-## Syntax 
+## Syntax and implementation
 
 Coche works by translating each line into a corresponding *argparse*
 *add_argument*-call. There is one definition per line and the empty lines are skipped.
@@ -81,12 +81,14 @@ parser.add_argument('--new-pi', type=float, dest='pi-value', help='default: 3.14
 args = parser.parse_args()
 ```
 
+## Usage
+
 The usual usage of coche is to call `coche.che` with a main function and argument definition:
 
 ```
 def main(a1, a2, a3, opt1=0, option2=False, mode="Ugly", verbose=False, pi_value=3.14):
-	print a1,a2,a3
-	print opt1, option2, mode, verbose, pi_value
+	print(a1,a2,a3)
+	print(opt1, option2, mode, verbose, pi_value)
 
 import coche
 coche.che(main,"""arg1; arg2
