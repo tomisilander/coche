@@ -1,8 +1,8 @@
 # Coche
 
 Coche is a simple Python-module that provies simplified interface to
-python argparse package in order to handle command line arguments.
-While it cannot do everything argparse can do,
+python *argparse* package in order to handle command line arguments.
+While it cannot do everything *argparse* can do,
 it tries to make providing simple command line argument handling support so
 easy that one has no excuse to not provide one.
 
@@ -41,17 +41,17 @@ arguments and builds the usage string.
 
 ## Syntax 
 
-Coche works by translating each line into a corresponding argparse
-add_arg-command. There is one definition per line and the empty lines are skipped.
+Coche works by translating each line into a corresponding *argparse*
+*add_argument*-call. There is one definition per line and the empty lines are skipped.
 One can also use semicolons as a command separator.
-Informally, each line has a structure with 7 parts:
+Informally, each line has a structure with seven parts:
 ```
- -o --long-option dest (type) {choice1, choice2} [default-value] :help-text
+ -o --long-option dest (type) {choice1, choice2} [default-value] :some help text
 ```
-each of which may be missing. If the first two flags are missing, the dest needs
+any of which may be missing. If the first two flags are missing, the *dest* needs
 to be present and it is taken to be a positional argument.
 
-Here is an example and the corresponding argparse commands
+Here is an example and the corresponding *argparse*-calls:
 ```
 import coche
 argdefs =    """arg1; arg2
