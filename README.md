@@ -9,7 +9,7 @@ easy that one has no excuse to not provide one.
 ## Overview
 
 I often find standard argparse too heavy to use.
-Coche defines one function, coche.che, that 
+Coche defines one function, `coche.che`, that 
 parses a command line definition (a.k.a usage) string and 
 calls the main function with proper parameters.
 
@@ -81,7 +81,7 @@ parser.add_argument('--new-pi', type=float, dest='pi-value', help='default: 3.14
 args = parser.parse_args()
 ```
 
-The usual usage of coche is to call coche.che with a main function and argument definition:
+The usual usage of coche is to call `coche.che` with a main function and argument definition:
 
 ```
 def main(a1, a2, a3, opt1=0, option2=False, mode="Ugly", verbose=False, pi_value=3.14):
@@ -99,5 +99,3 @@ coche.che(main,"""arg1; arg2
                 --new-pi pi-value (float) : default: 3.14.
                 """)
 ```
-
-
