@@ -86,7 +86,7 @@ args = parser.parse_args()
 The usual usage of coche is to call `coche.che` with a main function and argument definition:
 
 ```
-def main(a1, a2, a3, opt1=0, option2=False, mode="Ugly", verbose=False, pi_value=3.14):
+def main(a1, a2, a3, opt1=0, option2=False, mode="", verbose=False, pi_value=3):
 	print(a1,a2,a3)
 	print(opt1, option2, mode, verbose, pi_value)
 
@@ -98,6 +98,37 @@ coche.che(main,"""arg1; arg2
                 -m --mode mode {Good, Bad, Ugly} [Ugly]
                 -v --verbose (true)
                 -q --quiet verbose (false)
-                --new-pi pi-value (float) : default: 3.14.
+                --pi-value (float) [3.14]: default: 3.14.
                 """)
+```
+Running the code has desired effect:
+```
+$ python foo.py
+usage: foo.py [-h] [-o OPT1] [-p] [-m {Good,Bad,Ugly}] [-v] [-q]
+              [--pi-value PI_VALUE]
+              arg1 arg2 arg3
+foo.py: error: too few arguments
+
+$ python foo.py -h
+usage: foo.py [-h] [-o OPT1] [-p] [-m {Good,Bad,Ugly}] [-v] [-q]
+              [--pi-value PI_VALUE]
+              arg1 arg2 arg3
+
+positional arguments:
+  arg1
+  arg2
+  arg3                  the third argument
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OPT1               OPT1 has to be integer, default: 0
+  -p, --option2         a boolean option
+  -m {Good,Bad,Ugly}, --mode {Good,Bad,Ugly}
+  -v, --verbose
+  -q, --quiet
+  --pi-value PI_VALUE   default: 3.14.
+
+$ python foo.py a b c -q 
+a b c
+0 False Ugly False 3.14
 ```
