@@ -56,7 +56,7 @@ Here is an example and the corresponding *argparse*-calls:
 import coche
 argdefs =    """arg1; arg2
                 arg3  : the third argument
-	        -o opt1 (int) [0]         : OPT1 has to be integer, default: 0
+                -o opt1 (int) [0]         : OPT1 has to be integer, default: 0
                 -p --option2 (true)       : a boolean option
                 -m --mode mode {Good, Bad, Ugly} [Ugly]
                 -v --verbose (true)

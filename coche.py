@@ -129,5 +129,5 @@ def che(func, argdefs, print_cmds = False, **arg_parse_kwargs):
     
 if __name__ == '__main__':
     print(che(None, open(sys.argv.pop(1)).read(), print_cmds=True,
-              description="""Test command line checker by giving a file containing the definintion as a
-first argument."""))
+              description="Test command line checker by giving a file containing "
+                           "the definintion as a first argument."))
